@@ -8,16 +8,15 @@ function Ticker() {
 
   useEffect(() => {
     const prevPrice = prevPriceRef.current;
-    if(price > prevPrice){
-      setColor("green")
-    }else if(price < prevPrice){
-      setColor("brown")
-    }else{
-      setColor("black")
+    if (price > prevPrice) {
+      setColor("green");
+    } else if (price < prevPrice) {
+      setColor("brown");
+    } else {
+      setColor("black");
     }
     prevPriceRef.current = price;
-  }, [price])
-
+  }, [price]);
 
   useEffect(() => {
     const id = setInterval(() => setPrice(makeRandomNumber), 1000);
